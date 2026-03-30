@@ -73,6 +73,15 @@ nav {
   color: var(--neon-cyan);
   text-decoration: none;
   text-shadow: var(--glow-cyan);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
 }
 
 .nav-links {
@@ -197,6 +206,28 @@ nav {
   transform: translateY(-3px);
 }
 
+/* ─── Hero Tagline ─── */
+.hero-tagline {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--neon-pink);
+  text-shadow: 0 0 20px rgba(255, 45, 120, 0.5);
+  margin-bottom: 16px;
+  animation: fadeInUp 0.8s ease-out 0.15s both;
+}
+
+/* ─── Play Store Button Variant ─── */
+.btn-play {
+  background: linear-gradient(135deg, #34a853, #0f9d58);
+  box-shadow: 0 0 20px rgba(52, 168, 83, 0.4), 0 0 60px rgba(52, 168, 83, 0.1);
+}
+
+.btn-play:hover {
+  box-shadow: 0 0 30px rgba(52, 168, 83, 0.6), 0 0 80px rgba(52, 168, 83, 0.2);
+}
+
 /* ─── Divider line ─── */
 .neon-line {
   width: 100%;
@@ -204,6 +235,76 @@ nav {
   background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
   opacity: 0.3;
   margin: 80px 0;
+}
+
+/* ─── Screenshots ─── */
+.screenshots {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 100px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  font-weight: 300;
+  margin-top: -40px;
+  margin-bottom: 50px;
+}
+
+.screenshots-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 20px 0 30px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--neon-cyan) transparent;
+}
+
+.screenshots-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.screenshots-track::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.screenshots-track::-webkit-scrollbar-thumb {
+  background: rgba(0, 240, 255, 0.3);
+  border-radius: 3px;
+}
+
+.screenshot-card {
+  flex: 0 0 auto;
+  width: 260px;
+  scroll-snap-align: center;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 2px solid rgba(0, 240, 255, 0.15);
+  background: rgba(13, 18, 32, 0.6);
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.screenshot-card:hover {
+  border-color: rgba(0, 240, 255, 0.5);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(0, 240, 255, 0.15), 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.screenshot-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.screenshot-card-wide {
+  width: 380px;
 }
 
 /* ─── Features ─── */
@@ -276,6 +377,35 @@ nav {
   line-height: 1.7;
 }
 
+/* ─── CTA ─── */
+.cta {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 24px 100px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.cta-title span {
+  color: var(--neon-cyan);
+  text-shadow: var(--glow-cyan);
+}
+
+.cta-text {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 36px;
+}
+
 /* ─── Footer ─── */
 footer {
   position: relative;
@@ -293,6 +423,16 @@ footer {
   color: var(--neon-cyan);
   text-shadow: var(--glow-cyan);
   margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
 }
 
 .footer-links {
@@ -392,4 +532,7 @@ footer p {
   .nav-links { display: none; }
   .hero-actions { flex-direction: column; align-items: center; }
   .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .screenshot-card { width: 220px; }
+  .screenshot-card-wide { width: 320px; }
+  .section-subtitle { margin-top: -30px; font-size: 0.95rem; }
 }
